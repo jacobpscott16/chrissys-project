@@ -4,8 +4,8 @@ import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParamList } from '.';
 import { HeaderButton } from '../components/HeaderButton';
 import { TabBarIcon } from '../components/TabBarIcon';
-import One from '../screens/one';
-import Two from '../screens/two';
+import Dashboard from '../screens/dashboard';
+import Calendar from '../screens/calendar';
 
 const Tab = createBottomTabNavigator();
 
@@ -18,19 +18,19 @@ export default function TabLayout({ navigation }: Props) {
         tabBarActiveTintColor: 'black',
       }}>
       <Tab.Screen
-        name="One"
-        component={One}
+        name="Dashboard"
+        component={Dashboard}
         options={{
-          title: 'Tab One',
+          title: 'Dashboard',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => <HeaderButton onPress={() => navigation.navigate('Modal')} />,
         }}
       />
       <Tab.Screen
-        name="Two"
-        component={Two}
+        name="Calendar"
+        component={Calendar}
         options={{
-          title: 'Tab Two',
+          title: 'Calendar',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
